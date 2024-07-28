@@ -69,11 +69,13 @@ main {
     height: 24em;
     border-radius: 1em;
 }
-.horizontal-scroll {
-    display: inline-flex;
+.horizontal-scroll-content {
+    display: flex;
+    overflow-x: auto;
 }
+
 .book-element {
-    width: 50vh;
+    min-width: 35rem;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -98,3 +100,4 @@ footer {
 /* @media(max-width: 700px) {
 
 } */
+

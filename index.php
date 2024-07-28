@@ -28,44 +28,48 @@
         </div>
         <div id="container">
             <h2>ADICIONADOS RECENTEMENTE</h2>
-            <div id="add-last" class="horizontal-scroll">
-                <div class="book-element">
-                    <img src="./assets/img/capa1.jpeg" alt="Capa do livro Coelho" class="books-images" />
-                    <div class="book-text-home">
-                        <h3>Quincas Borba</h3>
-                        <h4>Machado de Assis</h4>
-                        <p class="description-book">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti voluptatem, sequi nam excepturi qui aspernatur? Numquam molestias neque sit necessitatibus et. Officia, beatae modi distinctio ipsam quidem odit. Consequuntur, obcaecati.
-                        </p>
-                        <p>Online</p>
+            <div id="scroll-horizontal-container">
+                <button class="scroll-button" id="left" onclick="">&#8592;</button>    <!-- &#8592; aparece seta para a esquerda -->
+                <div id="add-last" class="horizontal-scroll-content">
+                    <div class="book-element">
+                        <img src="./assets/img/capa1.jpeg" alt="Capa do livro Coelho" class="books-images" />
+                        <div class="book-text-home">
+                            <h3>Quincas Borba</h3>
+                            <h4>Machado de Assis</h4>
+                            <p class="description-book">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti voluptatem, sequi nam excepturi qui aspernatur? Numquam molestias neque sit necessitatibus et. Officia, beatae modi distinctio ipsam quidem odit. Consequuntur, obcaecati.
+                            </p>
+                            <p>Online</p>
+                        </div>
+                    </div>
+                    <!-- segundo elemento da primeira linha de scroll -->
+                    <div class="book-element">
+                        <img src="./assets/img/capa1.jpeg" alt="Capa do livro Coelho" class="books-images" />
+                        <div class="book-text-home">
+                            <h3>Quincas Borba</h3>
+                            <h4>Machado de Assis</h4>
+                            <p class="description-book">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab eos sint neque ipsum, totam nostrum saepe, nihil perspiciatis provident pariatur doloribus quo optio qui cumque accusantium minus atque expedita sunt.
+                            </p>
+                            <p>Online</p>
+                        </div>
+                    </div>
+                    <div class="book-element">
+                        <img src="./assets/img/capa1.jpeg" alt="Capa do livro Coelho" class="books-images" />
+                        <div class="book-text-home">
+                            <h3>Quincas Borba</h3>
+                            <h4>Machado de Assis</h4>
+                            <p class="description-book">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, architecto ducimus minima illo delectus, tempora in aut eos dolorum, eum corrupti obcaecati omnis modi quia quae corporis iusto. Excepturi, nobis?
+                            </p>
+                            <p>Online</p>
+                        </div>
                     </div>
                 </div>
-                <!-- segundo elemento da primeira linha de scroll -->
-                <div class="book-element">
-                    <img src="./assets/img/capa1.jpeg" alt="Capa do livro Coelho" class="books-images" />
-                    <div class="book-text-home">
-                        <h3>Quincas Borba</h3>
-                        <h4>Machado de Assis</h4>
-                        <p class="description-book">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab eos sint neque ipsum, totam nostrum saepe, nihil perspiciatis provident pariatur doloribus quo optio qui cumque accusantium minus atque expedita sunt.
-                        </p>
-                        <p>Online</p>
-                    </div>
-                </div>
-                <div class="book-element">
-                    <img src="./assets/img/capa1.jpeg" alt="Capa do livro Coelho" class="books-images" />
-                    <div class="book-text-home">
-                        <h3>Quincas Borba</h3>
-                        <h4>Machado de Assis</h4>
-                        <p class="description-book">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, architecto ducimus minima illo delectus, tempora in aut eos dolorum, eum corrupti obcaecati omnis modi quia quae corporis iusto. Excepturi, nobis?
-                        </p>
-                        <p>Online</p>
-                    </div>
-                </div>
+                <button class="scroll-button" id="right" onclick="">&#8594;</button>   <!-- &#8594; é seta para a direita -->
             </div>
             <h2>EXPLORE MAIS EXEMPLARES</h2>
-            <div id="see-more" class="horizontal-scroll">
+            <div id="see-more" class="horizontal-scroll-content">
             <div class="book-element">
                     <img src="./assets/img/capa2.jpeg" alt="Capa do livro Duolingo" class="books-images" />
                     <div class="book-text-home">
