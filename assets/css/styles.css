@@ -7,7 +7,6 @@ html {
 }
 body {
     background-color: #2422FF;
-    padding-inline: 10em;
 }
 header {
     display: flex;
@@ -59,6 +58,9 @@ header ul {
     color: #6b6868;
 }
 
+main {
+    margin-inline: 10em;
+}
 #container {
     background-color: #fff;
 }
@@ -83,6 +85,15 @@ header ul {
 .book-text-home{
     margin-left: 1.5rem;
 
+}
+
+footer {
+    background-color: #717171;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* @media(max-width: 700px) {
 

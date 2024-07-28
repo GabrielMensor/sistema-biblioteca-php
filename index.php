@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página inicial da Small Library, o gerenciador da biblioteca" />  <!-- o texto de descrição que aparece em letras pequenas, embaixo do título nos buscadores -->
-    <title>Documento</title>
+    <title>Small Library</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
@@ -74,14 +74,14 @@
                         <p class="description-book">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veritatis consequuntur commodi laudantium similique ducimus officia quos ratione aliquam, minima, possimus qui maxime vitae voluptatibus laborum sequi asperiores quam atque!
                         </p>
-                        <p>Online</p>
+                        <p>Físico</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-<!--    <footer>
-
-    </footer> -->
+    <footer>
+        Desenvolvido por Gabriel Mensor
+    </footer>
 </body>
 </html>
