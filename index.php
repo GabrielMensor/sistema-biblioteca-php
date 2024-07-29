@@ -10,6 +10,7 @@
     <meta name="description" content="Página inicial da Small Library, o gerenciador da biblioteca" />  <!-- o texto de descrição que aparece em letras pequenas, embaixo do título nos buscadores -->
     <title>Small Library</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/scripts.js"></script>
 </head>
 <body>
     <header>
@@ -29,7 +30,7 @@
         <div id="container">
             <h2>ADICIONADOS RECENTEMENTE</h2>
             <div id="scroll-horizontal-container">
-                <button class="scroll-button" id="left" onclick="">&#8592;</button>    <!-- &#8592; aparece seta para a esquerda -->
+                <button class="scroll-button" id="left" onclick="scrollContentLeft()">&#8592;</button>    <!-- &#8592; aparece seta para a esquerda -->
                 <div id="add-last" class="horizontal-scroll-content">
                     <div class="book-element">
                         <img src="./assets/img/capa1.jpeg" alt="Capa do livro Coelho" class="books-images" />
@@ -66,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="scroll-button" id="right" onclick="">&#8594;</button>   <!-- &#8594; é seta para a direita -->
+                <button class="scroll-button" id="right" onclick="scrollContentRight()">&#8594;</button>   <!-- &#8594; é seta para a direita -->
             </div>
             <h2>EXPLORE MAIS EXEMPLARES</h2>
             <div id="see-more" class="horizontal-scroll-content">
