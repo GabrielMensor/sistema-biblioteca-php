@@ -64,14 +64,13 @@ main {
 #container {
     background-color: #fff;
 }
-#scroll-horizontal-container {
+.scroll-horizontal-container {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     width: 100%;
-    /* overflow: hidden; */
 }
 .books-images {
     width: 20em;
@@ -109,12 +108,13 @@ main {
     z-index: 1;
 }
 
-#left {
+.left {
     left: 0;
 }
 
 .right {
     right: 0;
+    margin-left: 0.5em
 }
 
 footer {

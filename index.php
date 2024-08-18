@@ -10,7 +10,6 @@
     <meta name="description" content="Página inicial da Small Library, o gerenciador da biblioteca" />  <!-- o texto de descrição que aparece em letras pequenas, embaixo do título nos buscadores -->
     <title>Small Library</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="./assets/js/scripts.js"></script>
 </head>
 <body>
     <header>
@@ -29,8 +28,8 @@
         </div>
         <div id="container">
             <h2>ADICIONADOS RECENTEMENTE</h2>
-            <div id="scroll-horizontal-container">
-                <button class="scroll-button" id="left" onclick="scrollContentLeft()">&#8592;</button>    <!-- &#8592; aparece seta para a esquerda -->
+            <div class="scroll-horizontal-container" id="add-last-container">
+                <button class="scroll-button left" onclick="scrollContentLeft()">&#8592;</button>    <!-- &#8592; aparece seta para a esquerda -->
                 <div id="add-last" class="horizontal-scroll-content">
                     <div class="book-element">
                         <img src="./assets/img/capa1.jpeg" alt="Capa do livro Coelho" class="books-images" />
@@ -67,11 +66,35 @@
                         </div>
                     </div>
                 </div>
-                <button class="scroll-button" id="right" onclick="scrollContentRight()">&#8594;</button>   <!-- &#8594; é seta para a direita -->
+                <button class="scroll-button right" onclick="scrollContentRight()">&#8594;</button>   <!-- &#8594; é seta para a direita -->
             </div>
             <h2>EXPLORE MAIS EXEMPLARES</h2>
+            <div class="scroll-horizontal-container" id="see-more-container">
+            <button class="scroll-button left" onclick="scrollContentLeft()">&#8592;</button>
             <div id="see-more" class="horizontal-scroll-content">
-            <div class="book-element">
+                <div class="book-element">
+                    <img src="./assets/img/capa2.jpeg" alt="Capa do livro Duolingo" class="books-images" />
+                    <div class="book-text-home">
+                        <h3>Diário de um Banana - Dias de Cão</h3>
+                        <h4>Jeff Kinney</h4>
+                        <p class="description-book">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veritatis consequuntur commodi laudantium similique ducimus officia quos ratione aliquam, minima, possimus qui maxime vitae voluptatibus laborum sequi asperiores quam atque!
+                        </p>
+                        <p>Físico</p>
+                    </div>
+                </div>
+                <div class="book-element">
+                    <img src="./assets/img/capa2.jpeg" alt="Capa do livro Duolingo" class="books-images" />
+                    <div class="book-text-home">
+                        <h3>Diário de um Banana - Dias de Cão</h3>
+                        <h4>Jeff Kinney</h4>
+                        <p class="description-book">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veritatis consequuntur commodi laudantium similique ducimus officia quos ratione aliquam, minima, possimus qui maxime vitae voluptatibus laborum sequi asperiores quam atque!
+                        </p>
+                        <p>Físico</p>
+                    </div>
+                </div>
+                <div class="book-element">
                     <img src="./assets/img/capa2.jpeg" alt="Capa do livro Duolingo" class="books-images" />
                     <div class="book-text-home">
                         <h3>Diário de um Banana - Dias de Cão</h3>
@@ -83,10 +106,13 @@
                     </div>
                 </div>
             </div>
+            <button class="scroll-button right" onclick="scrollContentRight()">&#8594;</button>
+            </div>
         </div>
     </main>
     <footer>
         Desenvolvido por Gabriel Mensor
     </footer>
+    <script src="./assets/js/scripts.js"></script>
 </body>
 </html>
