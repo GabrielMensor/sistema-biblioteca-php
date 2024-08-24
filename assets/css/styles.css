@@ -138,3 +138,28 @@ footer {
     height: 200rem;
     width: 100rem;
 }
+form {
+    display: flex;
+    height: 10rem;
+}
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+input {
+    height: 1.5rem;
+    width: 15rem;
+
+}
+#login-submit-button{
+    height: 3rem;
+    width: 9rem;
+    padding: 0.2rem;
+    border-radius: 2rem;
+}
+
+#register-literature-form fieldset {
+/*     display: grid;
+ */    justify-content: space-between;
+    padding: 20rem;
+}

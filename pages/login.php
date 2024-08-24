@@ -21,14 +21,12 @@
             <h1>FAÇA LOGIN PARA MAIS!</h1>
             <p>Para favoritos ou novos cadastros</p>
         </div>
-        <form action="login.php" action="POST" id="login-form">
+        <form action="register-literature.php" action="POST" id="login-form">
             <fieldset>
                 <legend>Login</legend>
-                <label for="user">Usuário</label>
-                <input type="text" name="user" id="user" placeholder="Digite seu usuário">
-
-                <label for="password">Senha</label>
-                <input type="text" name="password" id="password" placeholder="Digite sua senha">
+                <input type="text" name="user" id="user" placeholder="Digite seu usuário"/>
+                <input type="password" name="password" id="password" placeholder="Digite sua senha"/>
+                <button type="submit" id="login-submit-button">Entrar</button>
             </fieldset>
         </form>
     </main>
