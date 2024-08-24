@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="#" class="clickable-normal-text normal-li">Livros</a></li>
                 <li><a href="#" class="clickable-normal-text normal-li">Sobre</a></li>
-                <li><a href="#" class="clickable-normal-text" id="login">Fazer Login</a></li>
+                <li><a href="./pages/login.php" class="clickable-normal-text" id="login">Fazer Login</a></li>
             </ul>
         </nav>
     </header>
@@ -110,9 +110,7 @@
             </div>
         </div>
     </main>
-    <footer>
-        Desenvolvido por Gabriel Mensor
-    </footer>
+    <?php include './includes/footer.html' ?>
     <script src="./assets/js/scripts.js"></script>
 </body>
 </html>

@@ -6,17 +6,16 @@ html {
     font-size: 62.5%;   /* 10px de font-size */
 }
 body {
-    background-color: #2422FF;
+    background-color: #b8dafc;
 }
 header {
     display: flex;
-    width: 97.4%;
     height: 8em;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5px 1.5em;
-    background-color: #7fffd4;
+    padding: 0 1em;
+    background-color: rgb(127, 255, 212);
 }
 header ul {
     list-style: none;
@@ -27,11 +26,11 @@ header ul {
     padding-bottom: 0.4em;
     font-size: 1.8em;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    border-bottom: 0.2em solid rgb(127, 255, 212);
+    border-bottom: 0.2em solid rgb(127, 255, 212);      /* rgb(127, 255, 212) */
     margin-inline: 0.3em;
 }
 .normal-li:hover {
-    border-bottom: 0.2em solid #2422FF;
+    border-bottom: 0.2em solid #2422FF; /*  */
     transition: all 0.4s ease-in-out;
 }
 #logo {
@@ -63,6 +62,7 @@ main {
 }
 #container {
     background-color: #fff;
+    padding-bottom: 1em;
 }
 .scroll-horizontal-container {
     display: flex;
@@ -118,8 +118,7 @@ main {
 }
 
 footer {
-    background-color: #717171;
-    width: 98.75vw;
+    background-color: #8da4a4;
     height: 10vh;
     display: flex;
     justify-content: center;
@@ -128,4 +127,14 @@ footer {
 /* @media(max-width: 700px) {
 
 } */
- 
+
+
+#login-main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+#login-main:nth-child(n) {
+    height: 200rem;
+    width: 100rem;
+}
