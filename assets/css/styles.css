@@ -140,11 +140,14 @@ footer {
 }
 form {
     display: flex;
-    height: 10rem;
 }
 fieldset {
     margin: 0;
     padding: 0;
+}
+#register-literature-form fieldset {
+    display: flex;
+    height: 15rem;
 }
 input {
     height: 1.5rem;
@@ -158,8 +161,8 @@ input {
     border-radius: 2rem;
 }
 
-#register-literature-form fieldset {
-/*     display: grid;
- */    justify-content: space-between;
+#register-literature-form {
+    display: flex;
+    justify-content: space-between;
     padding: 20rem;
 }
