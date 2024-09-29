@@ -138,31 +138,89 @@ footer {
     height: 200rem;
     width: 100rem;
 }
+
+
 form {
     display: flex;
 }
 fieldset {
-    margin: 0;
-    padding: 0;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
 }
-#register-literature-form fieldset {
-    display: flex;
-    height: 15rem;
+legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 10px;
 }
+/* 
 input {
     height: 1.5rem;
     width: 15rem;
-
+} */
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.4rem;
 }
-#login-submit-button{
+textarea {
+    resize: none;
+}
+
+#login-submit-button, #register-button{
     height: 3rem;
     width: 9rem;
     padding: 0.2rem;
     border-radius: 2rem;
 }
-
 #register-literature-form {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    width: 600px;
+    margin: 0 auto;
+}
+.form-columns {
+    display: flex;
     justify-content: space-between;
-    padding: 20rem;
+}
+#form-column-left, #form-column-right {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#register-button {
+    height: 50px;
+    width: 100px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.4rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#register-button:hover {
+    background-color: #0056b3;
+}
+#register-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Responsividade */
+
+@media(max-width: 768px) {
+    .form-columns {
+        flex-direction: column;
+    }
 }
