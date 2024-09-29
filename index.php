@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><a href="#" class="clickable-normal-text normal-li">Livros</a></li>
-                <li><a href="#" class="clickable-normal-text normal-li">Sobre</a></li>
+                <li><a href="./pages/about.php" class="clickable-normal-text normal-li">Sobre</a></li>
                 <li><a href="./pages/login.php" class="clickable-normal-text" id="login">Fazer Login</a></li>
             </ul>
         </nav>
