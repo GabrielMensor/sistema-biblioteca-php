@@ -17,20 +17,18 @@
         <h1><a href="../index.php" id="logo" class="clickable-normal-text">SMALL LIBRARY</a></h1>
     </header>
     <main id="login-main">
-        <div id="invite">
-            <h1>FAÇA LOGIN PARA MAIS!</h1>
-            <p>Para favoritos ou novos cadastros</p>
-        </div>
+        <div id="login-invite">
+            <h1 id="login-title">FAÇA LOGIN PARA MAIS!</h1>
+            <p id="login-subtitle">Para favoritos ou novos cadastros</p>
+            <img src="../assets/img/lendo-login.png"/>
+            </div>
         <form action="register-literature.php" action="POST" id="login-form">
             <fieldset>
-                <legend>Login</legend>
-                <input type="text" name="user" id="user" placeholder="Digite seu usuário"/>
-                <input type="password" name="password" id="password" placeholder="Digite sua senha"/>
+                <input type="text" name="user" id="user" placeholder="Digite seu usuário" class="form-input"/>
+                <input type="password" name="password" id="password" class="form-input" placeholder="Digite sua senha"/>
                 <button type="submit" id="login-submit-button">Entrar</button>
             </fieldset>
         </form>
     </main>
-    <?php include '../includes/footer.html' ?>
 </body>
-
 </html>
