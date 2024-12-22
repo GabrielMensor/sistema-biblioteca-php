@@ -1,4 +1,15 @@
 <?php
+$mysqli = new mysqli("localhost", "root", "", "bibliotecapequena");
+
+if ($mysqli -> connect_errno) {
+    echo "Falha na conexão com o MySQL: ", $mysqli -> connect_error;
+    exit();
+}
+
+$mysqli -> query("select * from author");
+echo "Affect rows: ", $mysqli -> affected_rows;
+
+$mysqli -> close();
 
 ?>
 
