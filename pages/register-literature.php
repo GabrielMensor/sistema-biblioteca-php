@@ -5,12 +5,10 @@ if ($mysqli -> connect_errno) {
     echo "Falha na conexão com o MySQL: ", $mysqli -> connect_error;
     exit();
 }
+$mysqli->set_charset("utf8");
 
-$mysqli -> query("select * from author");
-echo "Affect rows: ", $mysqli -> affected_rows;
-
-$mysqli -> close();
-
+$sql_category = "select id, name from category";
+$resultado_category = $mysqli->query($sql_category);
 ?>
 
 <!DOCTYPE html>
@@ -99,10 +97,11 @@ $mysqli -> close();
                     </select>
                     <select name="category" id="category">
                         <option value="">Categoria</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                        <?php while($linha = $resultado_category->fetch_assoc()): ?>
+                            <option value="<?= $linha['id']; ?>">
+                                <?= htmlentities($linha['name'], ENT_QUOTES, 'UTF-8'); ?>
+                        </option>
+                        <?php endwhile; ?>
                     </select>
                 </div>
             </div>
