@@ -12,6 +12,9 @@ $resultado_category = $mysqli->query($sql_category);
 
 $sql_publisher = "select id, name from publisher";
 $resultado_publisher = $mysqli->query($sql_publisher);
+
+$sql_author = "select id, name from author";
+$resultado_author = $mysqli->query($sql_author);
 ?>
 
 <!DOCTYPE html>
@@ -85,11 +88,12 @@ $resultado_publisher = $mysqli->query($sql_publisher);
                         <option value=""></option>
                     </select>
                     <select name="author" id="author">
-                        <option value="">Autor</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                        <option value="">Selecione o autor</option>
+                        <?php while($linha = $resultado_author->fetch_assoc()): ?>
+                            <option value="<?= $linha['id']; ?>">
+                                <?= htmlentities($linha['name'], ENT_QUOTES, 'UTF-8'); ?>
+                            <option>
+                            <?php endwhile ?>
                     </select>
                     <select name="publisher" id="publisher">
                         <option value="">Selecione a editora</option>
