@@ -9,6 +9,9 @@ $mysqli->set_charset("utf8");
 
 $sql_category = "select id, name from category";
 $resultado_category = $mysqli->query($sql_category);
+
+$sql_publisher = "select id, name from publisher";
+$resultado_publisher = $mysqli->query($sql_publisher);
 ?>
 
 <!DOCTYPE html>
@@ -89,14 +92,15 @@ $resultado_category = $mysqli->query($sql_category);
                         <option value=""></option>
                     </select>
                     <select name="publisher" id="publisher">
-                        <option value="">Editora</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                        <option value="">Selecione a editora</option>
+                        <?php while($linha = $resultado_publisher->fetch_assoc()): ?>
+                            <option value="<?= $linha['id']; ?>">
+                                <?= htmlentities($linha['name'], ENT_QUOTES, 'UTF-8'); ?>
+                            </option>
+                            <?php endwhile ?>
                     </select>
                     <select name="category" id="category">
-                        <option value="">Categoria</option>
+                        <option value="">Selecione a categoria</option>
                         <?php while($linha = $resultado_category->fetch_assoc()): ?>
                             <option value="<?= $linha['id']; ?>">
                                 <?= htmlentities($linha['name'], ENT_QUOTES, 'UTF-8'); ?>
