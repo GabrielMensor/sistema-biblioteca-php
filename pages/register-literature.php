@@ -43,6 +43,11 @@ $resultado_format = $mysqli->query($sql_format);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar literatura</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <script>
+        $('form').on('submit', function(e) {
+            e.preventDefault();
+        });
+    </script>
 </head>
 
 <body>
@@ -51,7 +56,7 @@ $resultado_format = $mysqli->query($sql_format);
     </header>
     <main>
         <h1 id="register-title">CADASTRO DE OBRAS</h1>
-        <form method="POST" id="register-literature-form" name="register-literature">
+        <form action="register-literature.php" method="POST" id="register-literature-form" name="register-literature">
             <div class="form-columns">
                 <div id="form-column-left">
                     <select name="type" id="type-select">
@@ -62,9 +67,9 @@ $resultado_format = $mysqli->query($sql_format);
                             </option>
                         <?php endwhile ?>
                     </select>
-                    <input type="text" id="isbn" placeholder="ISBN">
-                    <input type="text" id="title" placeholder="Título">
-                    <select name="literature_language" id="literature_language_select">
+                    <input type="text" id="isbn" name="isbn" placeholder="ISBN" required>
+                    <input type="text" id="title" name="title" placeholder="Título" required>
+                    <select name="literature_language1" id="literature_language_select">
                         <option value="">Idioma 1</option>
                         <?php while($linha = $resultado_languages->fetch_assoc()): ?>
                             <option value="<?= $linha['id'] ?>">
@@ -75,7 +80,7 @@ $resultado_format = $mysqli->query($sql_format);
                             $resultado_languages->data_seek(0); // Resetando o ponteiro do while
                         ?>
                     </select>
-                    <select name="literature_language" id="literature_language_select">
+                    <select name="literature_language2" id="literature_language_select">
                         <option value="">Idioma 2</option>
                         <?php while($linha = $resultado_languages->fetch_assoc()): ?>
                             <option value="<?= $linha['id'] ?>">
@@ -86,7 +91,7 @@ $resultado_format = $mysqli->query($sql_format);
                             $resultado_languages->data_seek(0); // Resetando o ponteiro do while
                         ?>
                     </select>
-                    <select name="literature_language" id="literature_language_select">
+                    <select name="literature_language3" id="literature_language_select">
                         <option value="">Idioma 3</option>
                         <?php while($linha = $resultado_languages->fetch_assoc()): ?>
                             <option value="<?= $linha['id'] ?>">
@@ -94,13 +99,13 @@ $resultado_format = $mysqli->query($sql_format);
                             </option>
                         <?php endwhile ?>
                     </select>
-                    <input type="text" id="publication_date_select" placeholder="Ano de publicação">
+                    <input type="text" id="publication_date_select" name="publication-date" placeholder="Ano de publicação" required>
                     <textarea name="summary" id="summary" rows="5" cols="33" placeholder="Resumo"></textarea>
-                    <input type="text" name="pages" id="pages" placeholder="Nº Páginas">
-                    <input type="file" name="cover-image" id="cover-image">
+                    <input type="text" name="pages" id="pages" placeholder="Nº Páginas" required>
+                    <input type="file" name="cover-image" id="cover-image" required>
                 </div>
                 <div id="form-column-right">
-                    <input type="text" name="edition" id="edition" placeholder="Edição">
+                    <input type="text" name="edition" id="edition" placeholder="Edição" required>
                     <select name="format" id="format">
                         <option value="">Formato</option>
                         <?php while($linha = $resultado_format->fetch_assoc()): ?>
@@ -109,8 +114,8 @@ $resultado_format = $mysqli->query($sql_format);
                             </option>
                         <?php endwhile ?>
                     </select>
-                    <input type="text" name="dimensions" id="dimensions" placeholder="Dimensões (modelo 29x21)">
-                    <input type="text" name="keywords" id="keywords" placeholder="Palavras-chave (separe por vírgulas)">
+                    <input type="text" name="dimensions" id="dimensions" placeholder="Dimensões (modelo 29x21)" required>
+                    <input type="text" name="keywords" id="keywords" placeholder="Palavras-chave (separe por vírgulas)" required>
                     <select name="availability" id="availability">
                         <option value="">Disponibilidade</option>
                         <?php while($linha = $resultado_availability->fetch_assoc()): ?>
@@ -164,7 +169,33 @@ $resultado_format = $mysqli->query($sql_format);
             <br>
             <br>
             <button type="submit" id="register-button">Cadastrar</button>
-        </form>
+            <?php
+            echo 'Oiiiiii';
+                if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+                    // Validação básica se campos são vazios
+                    $type = isset($_POST['type']) ? trim($_POST['type']) : '';
+                    $isbn = isset($_POST['isbn']) ? trim($_POST['isbn']) : '';
+                    $title = isset($_POST['title']) ? trim($_POST['title']) : '';
+                    $literature_language1 = isset($_POST['literature_language1']) ? trim($_POST['literature_language1']) : '';
+                    $literature_language2 = isset($_POST['literature_language2']) ? trim($_POST['literature_language2']) : '';
+                    $literature_language3 = isset($_POST['literature_language3']) ? trim($_POST['literature_language3']) : '';
+                    $publication_date = isset($_POST['publication-date']) ? trim($_POST['publication-date']) : '';
+                    $summary = isset($_POST['summary']) ? trim($_POST['summary']) : '';
+                    $pages = isset($_POST['pages']) ? trim($_POST['pages']) : '';
+                    $cover_image = isset($_POST['cover-image']) ? trim($_POST['cover-image']) : '';
+                    $edition = isset($_POST['edition']) ? trim($_POST['edition']) : '';
+                    $format = isset($_POST['format']) ? trim($_POST['format']) : '';
+                    $dimensions = isset($_POST['dimensions']) ? trim($_POST['dimensions']) : '';
+                    $keywords = isset($_POST['keywords']) ? trim($_POST['keywords']) : '';
+                    $availability = isset($_POST['availability']) ? trim($_POST['availability']) : '';
+                    $origin = isset($_POST['origin']) ? trim($_POST['origin']) : '';
+                    $location = isset($_POST['location']) ? trim($_POST['location']) : '';
+                    $author = isset($_POST['keywords']) ? trim($_POST['keywords']) : '';
+                    $publisher = isset($_POST['publisher']) ? trim($_POST['publisher']) : '';
+                    $category = isset($_POST['category']) ? trim($_POST['category']) : '';
+                }
+            ?>
+</form>
     </main>
     <?php include '../includes/footer.html' ?>
 </body>
