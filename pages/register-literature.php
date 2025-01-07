@@ -57,8 +57,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     $publisher = trim($_POST['publisher'] ?? '');
     $category = trim($_POST['category'] ?? '');
 
+    // Processos com cover-image
+    if (isset($_FILES['cover-image']) && $_FILES['cover-image']['error']) {
+        $uploadDir = 'uploads/';
 
-    
+        if(!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        $allowedTypes = ['image/jpeg', 'image/png'];    // Tipos permitidos
+        $maxFileSize = 2 * 1024 * 1024;                  // Tamanho máximo em bytes (1024 KB vezes 1024 bytes/KB) 
+
+        if (in_array($cover_image['type'], $allowedTypes) && $cover_image['size'] <= $maxFileSize) {    // in array retorna se o tipo do arquivo está entre os permitidos
+            $fileName = basename($cover_image['name']); // basename retorna a última parte do caminho (o nome do arquivo)
+            $targetFile = $uploadDir + $fileName;
+
+            // Verificar se não existe outro arquivo com o mesmo nome
+            if (file_exists($targetFile)) {
+                $fileName = uniqid() . '_' . $fileName;
+                $targetFile = $uploadDir + $fileName;
+            }
+
+            // Mover o arquivo
+            if (!move_uploaded_file($file['tmp_name'], $targetFile)) {
+                echo "Erro ao mover o arquivo";
+                exit;
+            }
+        } else {
+            echo "Formato do arquivo é inválido ou é maior que 2 MB";
+            exit;
+        }
+    }
 
     // Validação: Se algum campo estiver vazio, aborta
     $erros = false;
@@ -106,6 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     }
 
     $stmt->close();
+    $mysqli->close();
 }
 ?>
 
@@ -117,11 +147,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar literatura</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <script>
+<!--     <script>
         $('form').on('submit', function (e) {
             e.preventDefault();
         });
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -143,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                     </select>
                     <input type="text" id="isbn" name="isbn" placeholder="ISBN" required>
                     <input type="text" id="title" name="title" placeholder="Título" required>
-                    <select name="literature_language1" id="literature_language_select">
+                    <select name="literature_language1" id="literature_language_select1">
                         <option value="">Idioma 1</option>
                         <?php while ($linha = $resultado_languages->fetch_assoc()): ?>
                             <option value="<?= $linha['id'] ?>">
@@ -154,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                         $resultado_languages->data_seek(0); // Resetando o ponteiro do while
                         ?>
                     </select>
-                    <select name="literature_language2" id="literature_language_select">
+                    <select name="literature_language2" id="literature_language_select2">
                         <option value="">Idioma 2</option>
                         <?php while ($linha = $resultado_languages->fetch_assoc()): ?>
                             <option value="<?= $linha['id'] ?>">
@@ -165,7 +195,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                         $resultado_languages->data_seek(0); // Resetando o ponteiro do while
                         ?>
                     </select>
-                    <select name="literature_language3" id="literature_language_select">
+                    <select name="literature_language3" id="literature_language_select3">
                         <option value="">Idioma 3</option>
                         <?php while ($linha = $resultado_languages->fetch_assoc()): ?>
                             <option value="<?= $linha['id'] ?>">
